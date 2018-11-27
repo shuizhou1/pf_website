@@ -6,9 +6,16 @@
 
 <script>
 export default {
-  name: "peifeng_website"
+  name: "peifeng_website",
+  data() {
+    return {
+      isActive: ''
+    }
+  }
+  
 };
 </script>
 
-<style>
+<style lang="less" scoped>
+
 </style>

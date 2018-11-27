@@ -1,76 +1,408 @@
 <template>
   <div class="pf_homePage">
-    <div class="top_wraper">
-      <div class="nav_wraper">
-        <div class="nav">
-          <div class="nav_left">
-            <span>培风科技</span>
-          </div>
-          <div class="nav_right">
-            <router-link to='/'>首页</router-link>
-            <router-link to='/incubate'>孵化服务</router-link>
-            <router-link to='/cases'>案例展示</router-link>
-            <router-link to='/solution'>解决方案</router-link>
-            <router-link to='/about'>关于我们</router-link>
-            <router-link to='/contact'>联系我们</router-link>
-          </div>
+    <!-- 导航条 -->
+    <div
+      class="nav_wraper"
+      :class="{active:isActive}"
+    >
+      <div class="nav">
+        <div class="nav_left">
+          <span>培风科技</span>
+        </div>
+        <div class="nav_right">
+          <router-link to="/" :class="{active:isActive}">首页</router-link>
+          <router-link to="/incubate">孵化服务</router-link>
+          <router-link to="/cases">案例展示</router-link>
+          <router-link to="/solution">解决方案</router-link>
+          <router-link to="/about">关于我们</router-link>
+          <router-link to="/contact">联系我们</router-link>
         </div>
       </div>
+    </div>
+
+    <!-- 顶部图片部分 -->
+
+    <div class="top_wraper">
       <div class="desc">
         <span>靠谱的科技合伙人</span>
         <a href="#">预约项目</a>
       </div>
     </div>
+
+    <!-- 服务类型部分 -->
+
+    <div class="service_wraper pd_120">
+      <div class="container">
+        <p class="headline">
+          <span>我们提供高品质的服务</span>
+        </p>
+        <ul class="service_list clearfix">
+          <li>
+            <p class="icon">
+              <i class="fa fa-fort-awesome"></i>
+            </p>
+            <p class="title">
+              <span>初级服务</span>
+            </p>
+            <p class="content">
+              <span>UI原型设计,Ui界面设计</span>
+            </p>
+          </li>
+          <li>
+            <p class="icon">
+              <i class="fa fa-fort-awesome"></i>
+            </p>
+            <p class="title">
+              <span>初级服务</span>
+            </p>
+            <p class="content">
+              <span>UI原型设计,Ui界面设计</span>
+            </p>
+          </li>
+          <li>
+            <p class="icon">
+              <i class="fa fa-fort-awesome"></i>
+            </p>
+            <p class="title">
+              <span>初级服务</span>
+            </p>
+            <p class="content">
+              <span>UI原型设计,Ui界面设计</span>
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 成员介绍 -->
+
+    <div class="engineers pd_120">
+      <div class="container">
+        <p class="headline">
+          <span>为您提供优质CTO</span>
+        </p>
+        <ul class="engineer_list clearfix">
+          <li
+            v-for="(item,key) in cards"
+            :key="key"
+          >
+            <div class="avatar">
+              <img
+                :src="item.icon"
+                alt
+              >
+            </div>
+            <p class="title">
+              <span>{{item.title}}</span>
+            </p>
+            <p class="content">
+              <span>{{item.content}}</span>
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- cto职责 -->
+
+    <div class="technology_duty pd_120">
+      <div class="container">
+        <p class="headline">
+          <span>CTO的职责</span>
+        </p>
+        <ul class="duty_list clearfix">
+          <li class="duty_item clearfix bm">
+            <div class="fl clearfix">
+              <div class="icon fl">
+                <i class="fa fa-users"></i>
+              </div>
+              <div class="content fl pl">
+                <p class="title">
+                  <span>组建优质的团队</span>
+                </p>
+                <p class="desc">
+                  <span>为您推荐优质的团队</span>
+                </p>
+              </div>
+            </div>
+          </li>
+          <li class="min">
+            <div class="min_line"></div>
+          </li>
+          <li class="duty_item clearfix bm">
+            <div class="fr clearfix">
+              <div class="icon fr pl">
+                <i class="fa fa-users"></i>
+              </div>
+              <div class="content fr">
+                <p class="title">
+                  <span>组建优质的团队</span>
+                </p>
+                <p class="desc">
+                  <span>为您推荐优质的团队</span>
+                </p>
+              </div>
+            </div>
+          </li>
+          <li class="duty_item clearfix">
+            <div class="fl clearfix">
+              <div class="icon fl">
+                <i class="fa fa-users"></i>
+              </div>
+              <div class="content fl pr">
+                <p class="title">
+                  <span>组建优质的团队</span>
+                </p>
+                <p class="desc">
+                  <span>为您推荐优质的团队</span>
+                </p>
+              </div>
+            </div>
+          </li>
+          <li class="min">
+            <div class="min_line mt"></div>
+          </li>
+          <li class="duty_item clearfix">
+            <div class="fr clearfix">
+              <div class="icon fr">
+                <i class="fa fa-users"></i>
+              </div>
+              <div class="content fr pr">
+                <p class="title">
+                  <span>组建优质的团队</span>
+                </p>
+                <p class="desc">
+                  <span>为您推荐优质的团队</span>
+                </p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 项目设计流程 -->
+
+    <div class="procedure pd_120">
+      <p class="headline">
+        <span>完善的产品生产流程</span>
+      </p>
+      <div class="img_wraper container">
+        <img
+          src="static/images/procedure.png"
+          alt=""
+        >
+      </div>
+    </div>
+
+    <!-- 客户 -->
+
+    <div class="customer pd_120">
+      <p class="headline">
+        <span>我们的客户</span>
+      </p>
+      <div class="container">
+        <ul class="customer_list clearfix">
+          <li class="fl">
+            <img src="static/images/customer1.png">
+          </li>
+           <li class="fl">
+            <img src="static/images/customer1.png">
+          </li>
+           <li class="fl">
+            <img src="static/images/customer1.png">
+          </li>
+           <li class="fl">
+            <img src="static/images/customer1.png">
+          </li>
+          
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- 合作伙伴 -->
+
+    <div class="parner pd_120">
+      <p class="headline">
+        <span>我们的合作伙伴</span>
+      </p>
+      <div class="container">
+        <ul class="parner_list clearfix">
+          <li class="fl">
+            <img src="static/images/parner1.png">
+          </li>
+          <li class="fl">
+            <img src="static/images/parner1.png">
+          </li>
+          <li class="fl">
+            <img src="static/images/parner1.png">
+          </li>
+          <li class="fl">
+            <img src="static/images/parner1.png">
+          </li>
+          <li class="fl">
+            <img src="static/images/parner1.png">
+          </li>
+          <li class="fl">
+            <img src="static/images/parner1.png">
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- 底部 -->
+
+    <div class="home_footer">
+      <div class="container">
+        <div class="top clearfix">
+          <div class="top_left fl">
+            <span>培风科技</span>
+          </div>
+          <div class="top_mid fl">
+            <a href="#">关于我们</a>
+            <a href="#">联系我们</a>
+            <a href="#">加入我们</a>
+            <a href="#">合作伙伴</a>
+          </div>
+          <div class="top_right fr">
+            <i class="tel_icon fa fa-phone-square"> </i>
+            <span>18814143516</span>
+          </div>
+        </div>
+        <div class="bottom">
+          <span>广州市培风科技有限公司</span>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 <script>
-export default {};
+import pfNav from "./commen/nav.vue";
+import card from "../assets/js/data.js";
+export default {
+  name: "pf_homepage",
+  data() {
+    return {
+      isActive: false,
+      cards: []
+    };
+  },
+  components: {
+    pfNav
+  },
+  methods: {
+    navbarScoll() {
+      if (scrollY >= 80) {
+        this.isActive = true;
+      } else {
+        this.isActive = false;
+      }
+    }
+  },
+  created() {
+    console.log(card);
+    this.cards = card.homepage.cards;
+  },
+  mounted() {
+    window.addEventListener("scroll", this.navbarScoll);
+  }
+};
 </script>
 <style  lang="less" scoped>
+// 公共样式
+
+.container {
+  width: 960px;
+  margin: 0 auto;
+}
+
+.pd_120 {
+  padding: 120px 0;
+}
+
+p.headline {
+  font-size: 36px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+//
+
+
 .pf_homePage {
+
+  // 滑动后的导航条样式
+
+  .nav_wraper.active {
+    background: rgba(255, 255, 255, 1);
+    .nav {
+      .nav_left {
+        color: #0086eb;
+      }
+      .nav_right {
+        a {
+          color: #333;
+        }
+      }
+    }
+  }
+  // 导航条样式
+
+  .nav_wraper {
+    height: 80px;
+    width: 100%;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0);
+    .nav {
+      width: 960px;
+      height: 80px;
+      line-height: 80px;
+      margin: 0 auto;
+      .nav_left {
+        font-size: 30px;
+        color: #f9f9f9;
+        font-weight: 600;
+        float: left;
+      }
+      .nav_right {
+        float: right;
+        a {
+          margin-left: 50px;
+          color: #f9f9f9;
+          font-size: 14px;
+        }
+        a.active {
+          color: #0086eb;
+        }
+      }
+    }
+  }
+
+  // 上部背景图片部分样式
+
   .top_wraper {
     height: 925px;
     background: url("../assets/images/tim.jpg") no-repeat;
     background-size: cover;
-     color: #fff;
-    .nav_wraper {
-      height: 80px;
-      width: 100%;
-      position: fixed;
-      left: 0;
-      top: 0;
-     
-      // background: #fff;
-      .nav {
-        width: 960px;
-        height: 80px;
-        line-height: 80px;
-        margin: 0 auto;
-        .nav_left {
-          font-size: 30px;
-          // font-weight: 600;
-          float: left;
-        }
-        .nav_right {
-          float: right;
-          a {
-            margin-left: 50px;
-            color: #f9f9f9;
-            font-size: 14px;
-          }
-        }
-      }
-    }
+    position: relative;
     .desc {
       position: absolute;
       top: 50%;
       left: 50%;
-      transform:translateX(-50%);
+      transform: translateX(-50%);
       text-align: center;
+      z-index: 0;
       span {
         font-size: 48px;
+        color: #fff;
       }
-      a{
+      a {
         display: block;
         width: 200px;
         height: 60px;
@@ -79,9 +411,213 @@ export default {};
         color: #fff;
         font-size: 18px;
         text-align: center;
-        margin:40px auto 0 auto;
+        margin: 40px auto 0 auto;
       }
     }
+  }
+
+  // 服务类别部分样式
+
+  .service_wraper {
+    background: #f5f5f5;
+    .service_list {
+      li:not(:last-child) {
+        margin-right: 36px;
+      }
+      li:hover {
+        box-shadow: 0 0 10px #aaa;
+      }
+      li {
+        float: left;
+        width: 296px;
+        text-align: center;
+        background: #fff;
+        box-shadow: 0 0 2px #ddd;
+        p.icon {
+          font-size: 80px;
+          padding-top: 40px;
+        }
+        p.content {
+          font-size: 16px;
+          color: #888;
+          padding-bottom: 40px;
+        }
+        p.title {
+          font-size: 24px;
+          padding: 35px 0 20px 0;
+          color: #333;
+        }
+        // height: 420px;
+      }
+    }
+  }
+
+  // 工程师介绍
+  .engineers {
+    .engineer_list {
+      li:not(:nth-child(3n + 3)) {
+        margin-right: 36px;
+      }
+      li {
+        float: left;
+        width: 296px;
+        text-align: center;
+        background: #fff;
+        // box-shadow: 0 0 2px #ddd;
+        margin-bottom: 60px;
+        div.avatar {
+          height: 300px;
+          img {
+            width: 296px;
+            height: 300px;
+          }
+        }
+        p.title {
+          font-size: 24px;
+          padding: 20px 0 10px 0;
+        }
+        p.content {
+          font-size: 18px;
+          color: #888;
+        }
+      }
+    }
+  }
+  // 工程师职责
+  .technology_duty {
+    background: #f5f5f5;
+    .duty_list {
+      li {
+        float: left;
+        height: 120px;
+      }
+      li.min {
+        width: 2%;
+        .min_line {
+          width: 1px;
+          height: 110px;
+          background: #ddd;
+          margin: 0 auto;
+        }
+        .mt {
+          margin-top: 10px;
+        }
+      }
+      li.bm {
+        border-bottom: 1px solid #ddd;
+      }
+      li.duty_item {
+        width: 49%;
+        height: 120px;
+        div.icon {
+          font-size: 60px;
+          padding-top: 20px;
+          color: #2e82eb;
+        }
+        div.content {
+          padding-top: 30px;
+          p.title {
+            font-size: 24px;
+            padding-bottom: 10px;
+          }
+          p.desc {
+            color: #333;
+          }
+        }
+        .pl {
+          padding-left: 40px;
+        }
+        .pr {
+          padding: 40px;
+        }
+      }
+    }
+  }
+
+  // 产品生产流程样式
+
+  .procedure {
+    .img_wraper {
+      img {
+        width: 960px;
+      }
+    }
+  }
+
+  // 客户部分样式
+  .customer {
+    background: #f5f5f5;
+    .customer_list {
+      li {
+        width: 210px;
+        height: 160px;
+        
+      }
+      li:not(:last-child) {
+        padding-right: 40px;
+      }
+    }
+  }
+
+  // 合作伙伴部分样式
+
+  .parner {
+    .parner_list {
+      li:not(:last-child) {
+        padding-right: 21px;
+      }
+      li {
+        img {
+          border: 1px solid #eee;
+        }
+      }
+    }
+  }
+
+  // 底部样式
+
+  .home_footer {
+     background: #2e2e2e;
+     color: #ddd;
+     padding: 40px 0 20px 0;
+    .top {
+      padding-bottom: 40px;
+      .top_left {
+        font-size: 25px;
+      }
+      .top_mid {
+        padding-left: 200px;
+        padding-top: 5px;
+        a {
+          color: #aaa;
+          padding-right:30px;
+          position: relative;
+        }
+        a:not(:last-child)::after {
+          content: '';
+          height: 18px;
+          width: 1px;
+          background: #ddd;
+          color: #ddd;
+          position: absolute;
+          right: 10%;
+          top: 50%;
+          transform: translateY(-40%);
+        }
+      }
+      .top_right {
+        .tel_icon {
+          font-size: 24px;
+          vertical-align: middle;
+          color: yellowgreen;
+        }
+        span{
+          vertical-align: middle;
+        }
+      }
+
+    }
+
   }
 }
 </style>

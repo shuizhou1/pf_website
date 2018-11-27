@@ -10,7 +10,7 @@ li {
 	list-style: none
 }
 html {
-	font-size: 16px;
+	font-size: 14px;
 	font-family: "微软雅黑", "Arial", HELVETICA;
 }
 .clearfix:after {
@@ -20,4 +20,10 @@ html {
 	display: block;
 	clear: both;
 	visibility: hidden;
+}
+.fl {
+	float: left;
+}
+.fr {
+	float: right;
 }
