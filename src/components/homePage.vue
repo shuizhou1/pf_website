@@ -10,7 +10,7 @@
           <span>培风科技</span>
         </div>
         <div class="nav_right">
-          <router-link to="/" :class="{active:isActive}">首页</router-link>
+          <router-link to="/">首页</router-link>
           <router-link to="/incubate">孵化服务</router-link>
           <router-link to="/cases">案例展示</router-link>
           <router-link to="/solution">解决方案</router-link>
@@ -251,31 +251,6 @@
       </div>
 
     </div>
-
-    <!-- 底部 -->
-
-    <div class="home_footer">
-      <div class="container">
-        <div class="top clearfix">
-          <div class="top_left fl">
-            <span>培风科技</span>
-          </div>
-          <div class="top_mid fl">
-            <a href="#">关于我们</a>
-            <a href="#">联系我们</a>
-            <a href="#">加入我们</a>
-            <a href="#">合作伙伴</a>
-          </div>
-          <div class="top_right fr">
-            <i class="tel_icon fa fa-phone-square"> </i>
-            <span>18814143516</span>
-          </div>
-        </div>
-        <div class="bottom">
-          <span>广州市培风科技有限公司</span>
-        </div>
-      </div>
-    </div>
   </div>
 </template>
 <script>
@@ -313,10 +288,6 @@ export default {
 <style  lang="less" scoped>
 // 公共样式
 
-.container {
-  width: 960px;
-  margin: 0 auto;
-}
 
 .pd_120 {
   padding: 120px 0;
@@ -345,6 +316,12 @@ p.headline {
       .nav_right {
         a {
           color: #333;
+        }
+        a:hover {
+          color:#0086eb;
+        }
+        a.router-link-exact-active {
+          color: #0086eb;
         }
       }
     }
@@ -377,8 +354,8 @@ p.headline {
           color: #f9f9f9;
           font-size: 14px;
         }
-        a.active {
-          color: #0086eb;
+        a:hover {
+          color: #e5e5e5;
         }
       }
     }
@@ -395,7 +372,7 @@ p.headline {
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translateX(-50%);
+      transform: translate(-50%, -50%);
       text-align: center;
       z-index: 0;
       span {
@@ -424,9 +401,9 @@ p.headline {
       li:not(:last-child) {
         margin-right: 36px;
       }
-      li:hover {
-        box-shadow: 0 0 10px #aaa;
-      }
+      // li:hover {
+      //   box-shadow: 0 0 10px #aaa;
+      // }
       li {
         float: left;
         width: 296px;
@@ -574,50 +551,6 @@ p.headline {
     }
   }
 
-  // 底部样式
-
-  .home_footer {
-     background: #2e2e2e;
-     color: #ddd;
-     padding: 40px 0 20px 0;
-    .top {
-      padding-bottom: 40px;
-      .top_left {
-        font-size: 25px;
-      }
-      .top_mid {
-        padding-left: 200px;
-        padding-top: 5px;
-        a {
-          color: #aaa;
-          padding-right:30px;
-          position: relative;
-        }
-        a:not(:last-child)::after {
-          content: '';
-          height: 18px;
-          width: 1px;
-          background: #ddd;
-          color: #ddd;
-          position: absolute;
-          right: 10%;
-          top: 50%;
-          transform: translateY(-40%);
-        }
-      }
-      .top_right {
-        .tel_icon {
-          font-size: 24px;
-          vertical-align: middle;
-          color: yellowgreen;
-        }
-        span{
-          vertical-align: middle;
-        }
-      }
-
-    }
-
-  }
+  
 }
 </style>

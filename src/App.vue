@@ -1,6 +1,31 @@
 <template>
   <div id="peifeng_website">
     <router-view></router-view>
+
+    <!-- 底部 -->
+
+    <!-- <div class="footer">
+      <div class="container">
+        <div class="top clearfix">
+          <div class="top_left fl">
+            <span>培风科技</span>
+          </div>
+          <div class="top_mid fl">
+            <a href="#">关于我们</a>
+            <a href="#">联系我们</a>
+            <a href="#">加入我们</a>
+            <a href="#">合作伙伴</a>
+          </div>
+          <div class="top_right fr">
+            <i class="tel_icon fa fa-phone-square"> </i>
+            <span>18814143516</span>
+          </div>
+        </div>
+        <div class="bottom">
+          <span>广州市培风科技有限公司</span>
+        </div>
+      </div>
+    </div> -->
   </div>
 </template>
 
@@ -9,13 +34,57 @@ export default {
   name: "peifeng_website",
   data() {
     return {
-      isActive: ''
-    }
+      isActive: ""
+    };
   }
-  
 };
 </script>
 
 <style lang="less" scoped>
-
+// 底部样式
+#peifeng_website {
+  position: relative;
+  .footer {
+    width: 100%;
+    background: #2e2e2e;
+    color: #ddd;
+    padding: 40px 0 20px 0;
+    .top {
+      padding-bottom: 40px;
+      .top_left {
+        font-size: 25px;
+      }
+      .top_mid {
+        padding-left: 200px;
+        padding-top: 5px;
+        a {
+          color: #aaa;
+          padding-right: 30px;
+          position: relative;
+        }
+        a:not(:last-child)::after {
+          content: "";
+          height: 18px;
+          width: 1px;
+          background: #ddd;
+          color: #ddd;
+          position: absolute;
+          right: 10%;
+          top: 50%;
+          transform: translateY(-40%);
+        }
+      }
+      .top_right {
+        .tel_icon {
+          font-size: 24px;
+          vertical-align: middle;
+          color: yellowgreen;
+        }
+        span {
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+}
 </style>

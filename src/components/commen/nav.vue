@@ -1,5 +1,5 @@
 <template>
-   <div class="nav_wraper" :class="{active:isActive}">
+   <div class="nav_wraper" :class="{active:active}">
       <div class="nav">
         <div class="nav_left">
           <span>培风科技</span>
@@ -24,14 +24,30 @@ export default {
     }
   },
   created() {
-    // console.log(this.active)
+    console.log(typeof this.active)
   }
 }
 </script>
 <style lang="less" scope>
 .nav_wraper.active {
-  background: rgba(255,255,255,1);
-}
+    background: rgba(255, 255, 255, 1);
+    .nav {
+      .nav_left {
+        color: #0086eb;
+      }
+      .nav_right {
+        a {
+          color: #333;
+        }
+        a:hover {
+          color:#0086eb;
+        }
+        a.router-link-exact-active {
+          color: #0086eb;
+        }
+      }
+    }
+  }
 .nav_wraper {
   height: 80px;
   width: 100%;
@@ -48,7 +64,7 @@ export default {
     margin: 0 auto;
     .nav_left {
       font-size: 30px;
-      // font-weight: 600;
+      font-weight: 600;
       float: left;
     }
     .nav_right {
@@ -57,6 +73,9 @@ export default {
         margin-left: 50px;
         color: #f9f9f9;
         font-size: 14px;
+      }
+      a:hover {
+        color: #e5e5e5;
       }
     }
   }
