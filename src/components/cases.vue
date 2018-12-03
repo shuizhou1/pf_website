@@ -1,9 +1,46 @@
 <template>
   <div class="cases">
-    <pf-nav
-      :active="true"
-      class="navbar"
-    ></pf-nav>
+    <!-- 导航条 -->
+
+    <div class="nav_wraper active">
+      <div class="nav">
+        <div class="nav_left">
+          <span>培风科技</span>
+        </div>
+         <ul class="nav_right clearfix">
+          <li>
+            <router-link to="/">首页</router-link>
+          </li>
+          <li class="incubate">
+            <a href="#" class="show_list">孵化服务</a>
+            <ul class="incubate_sub_list">
+              <li>
+                <router-link to="/prototype">原型设计</router-link>
+              </li>
+              <li>
+                <router-link to="/ui">UI设计</router-link>
+              </li>
+              <li>
+                <router-link to="/develop">技术开发</router-link>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <router-link to="/cases">案例展示</router-link>
+          </li>
+          <li>
+            <router-link to="/solution">解决方案</router-link>
+          </li>
+          <li>
+            <router-link to="/about">关于我们</router-link>
+          </li>
+          <li>
+            <router-link to="/join">加入我们</router-link>
+          </li>
+        </ul>
+
+      </div>
+    </div>
 
     <!-- 案例 -->
 
@@ -38,12 +75,8 @@
   </div>
 </template>
 <script>
-import pfNav from "./commen/nav.vue";
 import data from "../assets/js/data.js";
 export default {
-  components: {
-    pfNav
-  },
   data() {
     return {
       cases: [],
@@ -68,10 +101,9 @@ export default {
   },
   methods: {
     dataFilter(category, ind) {
-
       //改变当前的分类
 
-      this.curentInd = ind 
+      this.curentInd = ind;
 
       // 筛选分类数据
 

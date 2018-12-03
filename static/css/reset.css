@@ -12,6 +12,7 @@ li {
 html {
 	font-size: 14px;
 	font-family: "微软雅黑", "Arial", HELVETICA;
+	color: #333;
 }
 .clearfix:after {
 	content: '';

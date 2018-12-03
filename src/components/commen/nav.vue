@@ -10,7 +10,7 @@
           <router-link to="/cases">案例展示</router-link>
           <router-link to="/solution">解决方案</router-link>
           <router-link to="/about">关于我们</router-link>
-          <router-link to="/contact">联系我们</router-link>
+          <router-link to="/join">加入我们</router-link>
         </div>
       </div>
     </div>

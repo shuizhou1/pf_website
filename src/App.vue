@@ -4,7 +4,7 @@
 
     <!-- 底部 -->
 
-    <!-- <div class="footer">
+    <div class="footer">
       <div class="container">
         <div class="top clearfix">
           <div class="top_left fl">
@@ -25,7 +25,7 @@
           <span>广州市培风科技有限公司</span>
         </div>
       </div>
-    </div> -->
+    </div>
   </div>
 </template>
 
@@ -40,7 +40,9 @@ export default {
 };
 </script>
 
-<style lang="less" scoped>
+<style lang="less">
+
+@import '../static/css/index.less';
 // 底部样式
 #peifeng_website {
   position: relative;

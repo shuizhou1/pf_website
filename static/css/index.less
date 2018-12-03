@@ -1,0 +1,129 @@
+// 滑动后的导航条样式
+
+.nav_wraper.active {
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0 1px 2px #aaa;
+  .nav {
+    .nav_left {
+      color: #0086eb;
+    }
+    .nav_right {
+      a {
+        color: #333;
+      }
+      a:hover {
+        color: #0086eb;
+      }
+      a.router-link-exact-active {
+        color: #0086eb;
+      }
+    }
+  }
+}
+// 导航条样式
+
+.nav_wraper {
+  height: 80px;
+  width: 100%;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0);
+  .nav {
+    width: 960px;
+    height: 80px;
+    line-height: 80px;
+    margin: 0 auto;
+    .nav_left {
+      font-size: 30px;
+      color: #f9f9f9;
+      font-weight: 600;
+      float: left;
+    }
+    .nav_right {
+      float: right;
+      // 鼠标划入'孵化服务'显示子菜单
+      li.incubate:hover .incubate_sub_list {
+        display: block;
+      }
+      li.incubate {
+        position: relative;
+        ul.incubate_sub_list {
+          display: none;
+          position: absolute;
+          border: 1px solid #ddd;
+          border-radius: 5px;
+          left: 0px;
+          bottom: -100px;
+          li {
+            line-height: 35px;
+            padding-left: 15px;
+            font-size: 14px;
+            height: 35px;
+            width: 150px;
+            background: #fff;
+            border-bottom: 1px solid #ddd;
+            position: relative;
+            a {
+              color: #444;
+            }
+          }
+          li::before {
+            content: "";
+            width: 0;
+            height: 0;
+            position: absolute;
+            top: -8px;
+            left: 15px;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-bottom: 8px solid #ddd;
+          }
+          li::after {
+            content: "";
+            width: 0;
+            height: 0;
+            position: absolute;
+            top: -7px;
+            left: 15px;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-bottom: 8px solid #fff;
+          }
+        }
+      }
+      > li {
+        float: left;
+        margin-left: 50px;
+        > a {
+          color: #f9f9f9;
+          font-size: 14px;
+          display: inline-block;
+        }
+        > a:hover {
+          color: #e5e5e5;
+        }
+      }
+    }
+  }
+}
+
+// 按钮链接
+
+.btn_link {
+  display: inline-block;
+  width: 200px;
+  height: 60px;
+  line-height: 60px;
+  border-radius: 5px;
+  font-size: 18px;
+  text-align: center;
+}
+
+// 一级标题
+.title {
+  font-size: 36px;
+  padding-bottom: 80px;
+  text-align: center;
+}

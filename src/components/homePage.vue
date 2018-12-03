@@ -9,23 +9,50 @@
         <div class="nav_left">
           <span>培风科技</span>
         </div>
-        <div class="nav_right">
-          <router-link to="/">首页</router-link>
-          <router-link to="/incubate">孵化服务</router-link>
-          <router-link to="/cases">案例展示</router-link>
-          <router-link to="/solution">解决方案</router-link>
-          <router-link to="/about">关于我们</router-link>
-          <router-link to="/contact">联系我们</router-link>
-        </div>
+        <ul class="nav_right clearfix">
+          <li>
+            <router-link to="/">首页</router-link>
+          </li>
+          <li class="incubate">
+            <a
+              href="#"
+              class="show_list"
+            >孵化服务</a>
+            <ul class="incubate_sub_list">
+              <li>
+                <router-link to="/prototype">原型设计</router-link>
+              </li>
+              <li>
+                <router-link to="/ui">UI设计</router-link>
+              </li>
+              <li>
+                <router-link to="/develop">技术开发</router-link>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <router-link to="/cases">案例展示</router-link>
+          </li>
+          <li>
+            <router-link to="/solution">解决方案</router-link>
+          </li>
+          <li>
+            <router-link to="/about">关于我们</router-link>
+          </li>
+          <li>
+            <router-link to="/join">加入我们</router-link>
+          </li>
+        </ul>
+
       </div>
     </div>
 
     <!-- 顶部图片部分 -->
 
-    <div class="top_wraper">
+    <div class="top_img_wraper">
       <div class="desc">
         <span>靠谱的科技合伙人</span>
-        <a href="#">预约项目</a>
+        <p><a href="#" class="btn_link">预约项目</a></p>
       </div>
     </div>
 
@@ -206,16 +233,16 @@
           <li class="fl">
             <img src="static/images/customer1.png">
           </li>
-           <li class="fl">
+          <li class="fl">
             <img src="static/images/customer1.png">
           </li>
-           <li class="fl">
+          <li class="fl">
             <img src="static/images/customer1.png">
           </li>
-           <li class="fl">
+          <li class="fl">
             <img src="static/images/customer1.png">
           </li>
-          
+
         </ul>
       </div>
 
@@ -264,9 +291,6 @@ export default {
       cards: []
     };
   },
-  components: {
-    pfNav
-  },
   methods: {
     navbarScoll() {
       if (scrollY >= 80) {
@@ -277,7 +301,6 @@ export default {
     }
   },
   created() {
-    console.log(card);
     this.cards = card.homepage.cards;
   },
   mounted() {
@@ -287,7 +310,6 @@ export default {
 </script>
 <style  lang="less" scoped>
 // 公共样式
-
 
 .pd_120 {
   padding: 120px 0;
@@ -304,66 +326,9 @@ p.headline {
 
 
 .pf_homePage {
-
-  // 滑动后的导航条样式
-
-  .nav_wraper.active {
-    background: rgba(255, 255, 255, 1);
-    .nav {
-      .nav_left {
-        color: #0086eb;
-      }
-      .nav_right {
-        a {
-          color: #333;
-        }
-        a:hover {
-          color:#0086eb;
-        }
-        a.router-link-exact-active {
-          color: #0086eb;
-        }
-      }
-    }
-  }
-  // 导航条样式
-
-  .nav_wraper {
-    height: 80px;
-    width: 100%;
-    position: fixed;
-    z-index: 2000;
-    left: 0;
-    top: 0;
-    background: rgba(0, 0, 0, 0);
-    .nav {
-      width: 960px;
-      height: 80px;
-      line-height: 80px;
-      margin: 0 auto;
-      .nav_left {
-        font-size: 30px;
-        color: #f9f9f9;
-        font-weight: 600;
-        float: left;
-      }
-      .nav_right {
-        float: right;
-        a {
-          margin-left: 50px;
-          color: #f9f9f9;
-          font-size: 14px;
-        }
-        a:hover {
-          color: #e5e5e5;
-        }
-      }
-    }
-  }
-
   // 上部背景图片部分样式
 
-  .top_wraper {
+  .top_img_wraper {
     height: 925px;
     background: url("../assets/images/tim.jpg") no-repeat;
     background-size: cover;
@@ -380,15 +345,13 @@ p.headline {
         color: #fff;
       }
       a {
-        display: block;
-        width: 200px;
-        height: 60px;
-        line-height: 60px;
-        background: #2e82eb;
+        background: rgb(46,130,235);
+        border-radius: 5px;
         color: #fff;
-        font-size: 18px;
-        text-align: center;
         margin: 40px auto 0 auto;
+      }
+      a:hover {
+        background: rgb(40,110,245);
       }
     }
   }
@@ -528,7 +491,6 @@ p.headline {
       li {
         width: 210px;
         height: 160px;
-        
       }
       li:not(:last-child) {
         padding-right: 40px;
@@ -550,7 +512,5 @@ p.headline {
       }
     }
   }
-
-  
 }
 </style>
