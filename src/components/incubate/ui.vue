@@ -274,6 +274,7 @@ export default {
           transition: opacity 1s;
         }
         .desc {
+          white-space: nowrap;
           transition: display 1s;
           display: none;
           position: absolute;

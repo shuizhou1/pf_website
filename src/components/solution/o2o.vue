@@ -112,13 +112,11 @@ export default {
     .title {
       font-size: 36px;
       color: #333;
-      margin-bottom: 30px;
+      padding-bottom: 30px;
     }
   }
   .img_box {
-    height: 350px;
     img {
-      height: 350px;
       width: 100%;
     }
   }

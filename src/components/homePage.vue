@@ -340,6 +340,7 @@ p.headline {
       transform: translate(-50%, -50%);
       text-align: center;
       z-index: 0;
+      white-space: nowrap;
       span {
         font-size: 48px;
         color: #fff;

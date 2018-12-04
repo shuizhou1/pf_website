@@ -11,13 +11,14 @@
             <span>培风科技</span>
           </div>
           <div class="top_mid fl">
-            <a href="#">关于我们</a>
-            <a href="#">联系我们</a>
-            <a href="#">加入我们</a>
-            <a href="#">合作伙伴</a>
+            <a href="/about">关于我们</a>
+            <a href="/about#concact">联系我们</a>
+            <a href="/join">加入我们</a>
+            <!-- <a href="">合作伙伴</a> -->
           </div>
           <div class="top_right fr">
-            <i class="tel_icon fa fa-phone-square"> </i>
+            <span>联系电话：</span>
+            <!-- <i class="tel_icon fa fa-phone-square"> </i> -->
             <span>18814143516</span>
           </div>
         </div>
@@ -49,20 +50,26 @@ export default {
   .footer {
     width: 100%;
     background: #2e2e2e;
-    color: #ddd;
+    color: #bbb;
     padding: 40px 0 20px 0;
+    font-size: 16px;
     .top {
-      padding-bottom: 40px;
+      padding-bottom: 30px;
+      height: 40px;
+      line-height: 40px;
       .top_left {
         font-size: 25px;
       }
       .top_mid {
         padding-left: 200px;
-        padding-top: 5px;
+        // padding-top: 5px;
         a {
-          color: #aaa;
+          color: #bbb;
           padding-right: 30px;
           position: relative;
+        }
+        a:hover {
+          color: #fff;
         }
         a:not(:last-child)::after {
           content: "";

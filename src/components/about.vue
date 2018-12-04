@@ -207,6 +207,7 @@ export default {
     background-size: cover;
     position: relative;
     .quality {
+      white-space: nowrap;
       position: absolute;
       color: #fff;
       font-size: 44px;

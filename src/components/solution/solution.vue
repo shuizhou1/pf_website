@@ -120,6 +120,7 @@ export default {
     position: relative;
     //  图片连接
     .icon_wraper {
+      width: 960px;
       position: absolute;
       top: 50%;
       left: 50%;

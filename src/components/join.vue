@@ -191,6 +191,7 @@ export default {
     background-size: cover;
     position: relative;
     .join_img_txt {
+      white-space: nowrap;
       text-align: center;
       position: absolute;
       color: #fff;
